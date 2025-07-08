@@ -47,19 +47,14 @@ class Movie:
         """
         return self._year
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+class StreamingService:
+    """
+    Represents a movie streaming service.
+    """
+    def __init__(self, name):
+        """
+        Initializes a streaming service object with two private data members:
+        name and catalog.
+        """
+        self._name = name
+        self._catalog = {} # empty dictionary for title (string): Movie (object) pairs.
