@@ -111,5 +111,25 @@ class StreamingGuide:
             if stream_service_name == service.get_name():
                 self._streaming_list.remove(service)
 
+    def who_streams_this_movie(self, movie_title):
+        """
+        Receives a movie title and returns either a dictionary of movie info or None if unavailable
+        """
+        stream_info_dict = {} # empty dictionary for movie info: title, year, streaming services
+        stream_services_list = [] # empty list for services streaming the movie
+
+        for service in self._streaming_list: # iterate over streaming guide
+            if movie_title in service.get_catalog(): # check if movie offered
+
+                stream_services_list.append(service.get_name())
+                stream_info_dict['title'] = movie_title
+                stream_info_dict['year'] = int(service.get_catalog()[movie_title].get_year())
+                stream_info_dict['services'] = stream_services_list
+
+        if len(stream_services_list) > 0:
+            return stream_info_dict
+        else:
+            return None
+
 
 
