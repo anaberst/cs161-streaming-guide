@@ -58,3 +58,15 @@ class StreamingService:
         """
         self._name = name
         self._catalog = {} # empty dictionary for title (string): Movie (object) pairs.
+
+    def get_name(self):
+        """
+        Returns the name of the streaming service.
+        """
+        return self._name
+
+    def get_catalog(self):
+        """
+        Returns the streaming service catalog, a dictionary of Movie objects.
+        """
+        return self._catalog
