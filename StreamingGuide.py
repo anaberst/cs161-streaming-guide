@@ -23,3 +23,43 @@ class Movie:
         self._director = director
         self._year = year
 
+    def get_title(self):
+        """
+        Returns the movie's title.
+        """
+        return self._title
+
+    def get_genre(self):
+        """
+        Returns the movie's genre.
+        """
+        return self._genre
+
+    def get_director(self):
+        """
+        Returns the movie's director.
+        """
+        return self._director
+
+    def get_year(self):
+        """
+        Returns the movie's release year.
+        """
+        return self._year
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
