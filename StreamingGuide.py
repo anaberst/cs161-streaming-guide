@@ -71,6 +71,20 @@ class StreamingService:
         """
         return self._catalog
 
+    def add_movie(self, movie_object):
+        """
+        Receives a Movie object to add to the streaming service catalog
+        """
+        self._catalog[movie_object.get_title()] = movie_object  # title (string): movie (object) pair
+
+    def delete_movie(self, movie_title):
+        """
+        Receives a Movie object to delete from the streaming service catalog
+        [Assumption: there are no duplicate movies]
+        """
+        if movie_title in self._catalog:
+            del self._catalog[movie_title]
+
 class StreamingGuide:
     """
     Represents a movie streaming service guide
