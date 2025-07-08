@@ -96,3 +96,20 @@ class StreamingGuide:
         """
         self._streaming_list = [] # empty list for StreamingService objects
 
+    def add_streaming_service(self, stream_service_object):
+        """
+        Receives a StreamingService object to add to the streaming guide
+        """
+        self._streaming_list.append(stream_service_object)
+
+    def delete_streaming_service(self, stream_service_name):
+        """
+        Receives the name of a streaming service to remove from the guide
+        [Assumption: all streaming services have unique names]
+        """
+        for service in self._streaming_list:
+            if stream_service_name == service.get_name():
+                self._streaming_list.remove(service)
+
+
+
