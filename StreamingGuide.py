@@ -70,3 +70,15 @@ class StreamingService:
         Returns the streaming service catalog, a dictionary of Movie objects.
         """
         return self._catalog
+
+class StreamingGuide:
+    """
+    Represents a movie streaming service guide.
+    """
+    def __init__(self):
+        """
+        Initializes a streaming guide object with one private data member:
+        a streaming list.
+        """
+        self._streaming_list = [] # empty list for StreamingService objects
+
