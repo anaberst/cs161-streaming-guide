@@ -1,42 +1,33 @@
-# :movie_camera: Streaming Guide
-A Python program that models a system for organizing movies across different streaming services using object-oriented programming (OOP) principles.
+# :movie_camera: CS161 Streaming Guide
+Final project for `CS161: Introduction to Computer Science I` at Oregon State University. It has been approved for public sharing.
 
-## :one: Project Overview
-This project simulates a streaming guide that lets users manage a collection of streaming services and the movies they offer. It includes three main classes:
+This project simulates a movie streaming guide that allows users to:
 
-- `Movie`: represents an individual movie with attributes like title, genre, director, and year.
-- `StreamingService`: represents a streaming platform that holds a catalog of `Movie` objects.
-- `StreamingGuide`: manages multiple `StreamingService` instances and can search for where a specific movie is available.
+- Add and remove movies from streaming service catalogs
+- Manage multiple streaming platforms
+- Search for where a specific movie is available to stream
 
-The program demonstrates foundational OOP concepts including encapsulation, object relationships, and nested data structures (e.g. a guide contains services, and services contain movies).
+It consists of three main classes:
 
-## :two: Learning Goals
-This project was developed for `CS161`, an introductory Python programming course at Oregon State University. Key concepts practiced include:
+- `Movie`: Represents a movie with attributes title, genre, director, and release year
+- `StreamingService`: Represents a platform (e.g., Netflix, Hulu) with a catalog of available movies
+- `StreamingGuide`: A central guide that tracks all streaming services and can find which services stream a select movie
 
-- Defining and using classes and objects
-- Encapsulation using private data members
-- Managing relationships between objects
-- Implementing search logic over nested data structures
+The project demonstrates class-based design, object composition, and encapsulation using private attributes and getter methods.
 
-## :three: How to Run
+## :hourglass_flowing_sand: Testing
 
-No special setup is required.
+The file `test_streaming_guide.py` includes unit tests that cover:
 
-1. Ensure you have Python 3 installed.
-2. Save your code in a file named `StreamingGuide.py`.
-3. Run your script or use the sample code snippet below to test functionality:
+- Creating and accessing movie data
+- Adding/removing movies from a streaming service
+- Managing multiple streaming services
+- Searching for a movie across all services
 
-```python
-from StreamingGuide import Movie, StreamingService, StreamingGuide
-
-movie_1 = Movie('The Seventh Seal', 'comedy', 'Ingmar Bergman', 1957)
-movie_2 = Movie('Home Alone', 'tragedy', 'Chris Columbus', 1990)
-
-netflix = StreamingService('Netflick')
-netflix.add_movie(movie_2)
-
-guide = StreamingGuide()
-guide.add_streaming_service(netflix)
-
-results = guide.who_streams_this_movie('Home Alone')
-print(results)
+## :open_file_folder: File Structure
+```
+cs161-streaming-guide/
+├── README.md                 # You are here
+├── streaming_guide.py        # Main class definitions
+└── test_streaming_guide.py   # Unit tests for the project  
+```
