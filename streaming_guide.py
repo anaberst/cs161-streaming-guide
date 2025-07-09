@@ -130,6 +130,3 @@ class StreamingGuide:
             return stream_info_dict
         else:
             return None
-
-
-
